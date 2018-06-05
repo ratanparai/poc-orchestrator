@@ -1,9 +1,11 @@
 package com.ratanparai.crm.models;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+@Entity
 public class Olcm {
 
     @Id
@@ -12,7 +14,9 @@ public class Olcm {
 
     private String title;
     
-    private String Description;
+	private String Description;
+	
+	public Olcm() {}
 
     public Olcm(String title, String Description) {
         this.title = title;

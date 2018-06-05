@@ -1,0 +1,28 @@
+{
+    "run": {
+        "default": "",
+        "items": [
+            {
+                "name": "crm",
+                "projectName": "crm",
+                "workingDirectory": "/home/ratanparai/Codes/Projects/Microservice/rnd/service-orchestration",
+                "args": [],
+                "vmargs": [],
+                "preLaunchTask": ""
+            }
+        ]
+    },
+    "debug": {
+        "default": "",
+        "items": [
+            {
+                "name": "crm",
+                "projectName": "crm",
+                "workingDirectory": "/home/ratanparai/Codes/Projects/Microservice/rnd/service-orchestration",
+                "args": [],
+                "vmargs": [],
+                "preLaunchTask": ""
+            }
+        ]
+    }
+}

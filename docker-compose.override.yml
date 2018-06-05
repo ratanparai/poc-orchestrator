@@ -1,0 +1,29 @@
+version : '3'
+services:
+  crm:
+    ports:
+      - "5100:8080"
+    environment:
+      - 'SPRING_APPLICATION_JSON={
+        "spring": {
+          "datasource": {
+            "username": "crm",
+            "password": "Str0ngP@ssW0rd",
+            "url": "jdbc:postgresql://crm.data:5432/crm"
+          },
+          "jpa": {
+            "hibernate": {
+              "ddl-auto": "create-drop" 
+            }
+          }
+        }
+      }' 
+
+  crm.data:
+    environment:
+      - POSTGRES_PASSWORD=Str0ngP@ssW0rd
+      - POSTGRES_USER=crm
+
+  adminer:
+    ports:
+      - "6100:8080"

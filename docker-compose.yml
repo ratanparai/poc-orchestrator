@@ -1,0 +1,13 @@
+version : '3'
+services:
+  crm:
+    build: CRM
+    links: 
+      - crm.data
+
+  crm.data:
+    image: postgres:alpine
+    restart: always
+
+  adminer:
+    image: adminer
