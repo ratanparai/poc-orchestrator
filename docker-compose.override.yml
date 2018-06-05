@@ -14,7 +14,10 @@ services:
           "jpa": {
             "hibernate": {
               "ddl-auto": "create-drop" 
-            }
+            },
+          },
+          "rabbitmq": {
+            "host": "rabbitmq"
           }
         }
       }' 
@@ -27,3 +30,8 @@ services:
   adminer:
     ports:
       - "6100:8080"
+
+  rabbitmq:
+    ports:
+      - "5672:5672"
+      - "15672:15672"

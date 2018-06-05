@@ -11,3 +11,6 @@ services:
 
   adminer:
     image: adminer
+
+  rabbitmq:
+    image: rabbitmq:3.6-management-alpine

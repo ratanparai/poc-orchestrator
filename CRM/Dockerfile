@@ -2,6 +2,7 @@ FROM openjdk:8-jdk-alpine AS base
 EXPOSE 8080
 
 FROM maven AS build
+VOLUME /root/.m2
 WORKDIR /app
 COPY pom.xml .
 RUN mvn clean verify --fail-never
