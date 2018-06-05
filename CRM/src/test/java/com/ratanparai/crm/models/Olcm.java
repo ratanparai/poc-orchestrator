@@ -13,6 +13,12 @@ public class Olcm {
     private String title;
     
     private String Description;
+
+    public Olcm(String title, String Description) {
+        this.title = title;
+        this.Description = Description;
+    }
+
     
     /**
 	 * @return the description
@@ -47,12 +53,5 @@ public class Olcm {
 	 */
 	public Long getId() {
 		return id;
-	}
-    
-    /**
-	 * @param id the id to set
-	 */
-	public void setId(Long id) {
-		this.id = id;
 	}
 }
