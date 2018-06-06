@@ -13,7 +13,7 @@ services:
           },
           "jpa": {
             "hibernate": {
-              "ddl-auto": "create-drop" 
+              "ddl-auto": "create-drop"
             }
           },
           "rabbitmq": {
@@ -22,12 +22,41 @@ services:
             "password": "guest"
           }
         }
-      }' 
+      }'
 
   crm.data:
     environment:
       - POSTGRES_PASSWORD=Str0ngP@ssW0rd
       - POSTGRES_USER=crm
+
+  orchestrator:
+    ports:
+      - "5101:8080"
+    environment:
+      - 'SPRING_APPLICATION_JSON={
+        "spring": {
+          "datasource": {
+            "username": "orchestrator",
+            "password": "Str0ngP@ssW0rd",
+            "url": "jdbc:postgresql://orchestrator.data:5432/orchestrator"
+          },
+          "jpa": {
+            "hibernate": {
+              "ddl-auto": "create-drop"
+            }
+          },
+          "rabbitmq": {
+            "host": "rabbitmq",
+            "username": "guest",
+            "password": "guest"
+          }
+        }
+      }'
+
+  orchestrator.data:
+    environment:
+      - POSTGRES_PASSWORD=Str0ngP@ssW0rd
+      - POSTGRES_USER=orchestrator
 
   adminer:
     ports:
